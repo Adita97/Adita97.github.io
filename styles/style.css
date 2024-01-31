@@ -318,6 +318,7 @@ text-align: left;
     display: flex;
     flex-direction: column;
     background-color: #e0ccbe;
+    width: 100vw;
 }
 .form-container{
     display: flex;
@@ -338,6 +339,7 @@ text-align: left;
     height: 3vh;
     width: 288px;
     margin: 5px;
+    max-width: 80vw;
 }
 
 .email,.subject{ 
@@ -372,4 +374,14 @@ text-align: left;
     font-size:1em;
   }
 }
+
+@media screen and (max-width: 850px){
+  .first-row input{
+    width: 38vw;
+  }
+   .email, .subject, .message{
+    width: 80vw;
+  }
+}
+
 
