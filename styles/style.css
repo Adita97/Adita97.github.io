@@ -145,9 +145,10 @@ text-align: left;
 }
 
 .why-us-card div, .why-us-card-reverse div {
-    font-size: 1.4em;
+    font-size: 1.3em;
     max-width: 60vw;
-    margin: auto 4vw;
+    margin: 3vh 4vw;
+
 
 }
 
@@ -366,5 +367,9 @@ text-align: left;
     transform: scale(1.05);
     
 }
-
+@media screen and (max-width: 1200px){
+  *{
+    font-size:1em;
+  }
+}
 

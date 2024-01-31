@@ -39,7 +39,6 @@ body {
 
 @media screen and (max-width: 768px) {
   .navbar a {
-    float: none;
     display: flex;
     justify-content: center;
   }
