@@ -44,11 +44,21 @@
   margin-right: 50px;
   font-family: "Roboto Mono", monospace;
   margin: 2vh 2vw;
-}
+}   
+    /* Book Now Button*/
 
 .button {
-    font-family: "Roboto Mono", monospace;
+  font-family: "Roboto Mono", monospace;
+  width: 150px;
+  margin: 80px 30%;
+  display: block;
+  text-decoration: none;
+  padding: 20px 20px;
+  background-color: #e0ccbe;
+  text-align: center;
+  color: #3c3633;
 }
+
 .button:hover {
     border: white 2px solid;
 }
@@ -98,18 +108,7 @@
   }
 }
 
-/* Book Now Button*/
 
-.button {
-  width: 150px;
-  margin: 80px 30%;
-  display: block;
-  text-decoration: none;
-  padding: 20px 20px;
-  background-color: #e0ccbe;
-  text-align: center;
-  color: #3c3633;
-}
 
 /* End of introduction CSS */
 
