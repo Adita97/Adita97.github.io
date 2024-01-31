@@ -376,8 +376,13 @@ text-align: left;
 }
 
 @media screen and (max-width: 850px){
+
+  .first-row{
+    flex-direction: column;
+  }
   .first-row input{
-    width: 38vw;
+    
+    width: 80vw;
   }
    .email, .subject, .message{
     width: 80vw;
