@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  height: 3vh;
+}
+
+.navbar {
+  margin: 0;
+  background-color: #747264;
+  overflow: hidden;
+  height: 3.5rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px #000000; /* Add box shadow for better visibility */
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  height: 100%;
+  transition: background-color 0.5s, transform 0.3s; /* Smooth transition effect */
+}
+
+.navbar a:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  .navbar a {
+    float: none;
+    display: flex;
+    justify-content: center;
+  }
+}

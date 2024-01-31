@@ -1,0 +1,371 @@
+@import url(navbar.css);
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"); /* GOOGLE FONT OSWALD*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+* {
+  margin: 0;
+  /* max-width: 100%; */
+}
+
+.introduction {
+  background-color: #3c3633;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduction img {
+  margin-right: 2vw;
+  background-color: #e0ccbe;
+  padding: 50px;
+  height: 700px;
+  text-align: right;
+}
+
+.introduction-text {
+  padding: 0 2vw;
+  align-content: flex-start;
+  text-align: left;
+  margin: 0;
+}
+
+.introduction-text h1 {
+  font-family: Oswald;
+  font-size: 8vh;
+  color: #fff;
+  margin: 2vh 2vw;
+}
+
+.introduction-text h4 {
+  width: 40vw;
+  color: #fff;
+  margin-right: 50px;
+  font-family: "Roboto Mono", monospace;
+  margin: 2vh 2vw;
+}
+
+.button {
+    font-family: "Roboto Mono", monospace;
+}
+.button:hover {
+    border: white 2px solid;
+}
+
+/* Media Query For Introduction*/
+
+@media screen and (max-width: 1500px) {
+  .introduction-text h4 {
+    margin: 2vh 0 0 4vw;
+    width: auto;
+    text-align: center;
+  }
+  .introduction-text h1 {
+    margin: 2vh 0 0 4vw;
+    width: auto;
+    font-size: 6vh;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1340px) {
+  .introduction-text {
+    display: block;
+    position: absolute;
+    top: 20%;
+    width: 60vw;
+  }
+  .introduction img {
+    width: auto;
+    height: 100vh;
+  }
+  .button {
+    margin: 40px auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .introduction-text h1,
+  h4 {
+    font-size: 0.85em;
+    text-align: center;
+    margin: auto;
+  }
+
+  .introduction-text h1 {
+    font-size: 4vh;
+  }
+}
+
+/* Book Now Button*/
+
+.button {
+  width: 150px;
+  margin: 80px 30%;
+  display: block;
+  text-decoration: none;
+  padding: 20px 20px;
+  background-color: #e0ccbe;
+  text-align: center;
+  color: #3c3633;
+}
+
+/* End of introduction CSS */
+
+.why-us {
+  background-color: #e0ccbe;
+  text-align: center;
+  padding: 3vh;
+}
+
+
+.section-title {
+  font-size: 50px;
+  padding: 20px 0;
+}
+
+/* .why-us-card {
+  display: grid;
+  grid: 1fr/ 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  text-align: left;
+  padding: 20px 15%;
+  gap: 20px;
+  
+} */
+.why-us-card, .why-us-card-reverse{
+display: flex;
+flex-direction: row;
+align-items: center;
+max-width: 80%;
+margin: auto;
+text-align: left;
+
+}
+
+.why-us-card div, .why-us-card-reverse div {
+    font-size: 1.4em;
+    max-width: 60vw;
+    margin: auto 4vw;
+
+}
+
+/* .why-us-card-reverse {
+  display: grid;
+  grid: 1fr/ 1fr 1fr;
+  gap: 20px;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-items: center;
+  text-align: left;
+  padding: 20px 15%;
+} */
+
+
+.why-us-card-reverse h2 {
+  margin-bottom: 20px;
+}
+
+.image {
+  padding: 2% 5%;
+  order: 1;
+}
+
+@media screen and (max-width: 1240px) {
+  .why-us-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .why-us-card img {
+    max-width: 100vw;
+  }
+
+  .why-us-card-reverse {
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    order: 0;
+  }
+}
+
+/* Social Media section*/
+
+.social-media-container {
+  text-align: center;
+  background-color: #3c3633;
+}
+
+.social-media-container h1 {
+  color: #eeedeb;
+}
+
+.social-media {
+  height: 25vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3vw;
+
+  align-items: center;
+  margin: auto;
+}
+.social-media-icon {
+  color: #eeedeb;
+}
+
+.social-media div {
+  border: 4px solid #eeedeb;
+  border-radius: 100%;
+  padding: 12px;
+}
+
+.footer {
+  background-color: #3c3633;
+  color: #eeedeb;
+  height: 40vh;
+  display: grid;
+  grid: 1fr/ 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+}
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+}
+.footer-menu a {
+  text-decoration: none;
+  color: #eeedeb;
+  padding: 1vh 0;
+}
+
+.email-input {
+  height: 4vh;
+  width: 16vw;
+  margin: 2vh 0;
+  padding: 5px;
+}
+
+.subscribe-button {
+  background-color: #eeedeb;
+  border: 2px solid #e0ccbe;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+
+/*****ABOUT US PAGE*****/
+
+.about-us{
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+    background-color: #e0ccbe;
+}
+
+.about-us h1{
+    font-size: 5vh;
+}
+.about-us p{
+    font-size: 3vh;
+    padding: 2vw 4vw;
+}
+
+@media screen and (max-width: 1250px) {
+
+    .footer{
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .map{
+        display: none;
+    }
+    .about-us{
+        max-width: 100%;
+    }
+    .email-input{
+        width: 25vw;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .footer{
+    flex-direction: column;
+    height: 100vh;
+    }
+    .footer-section{
+        padding: 1.5vh 0;
+        font-size: 1.5em;
+    }
+    .email-input{
+        width: 80vw;
+    }
+}
+
+/*****CONTACT US PAGE *****/
+.contact-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #e0ccbe;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+}
+.first-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.first-row input{
+    padding: 10px;
+    height: 3vh;
+    width: 288px;
+    margin: 5px;
+}
+
+.email,.subject{ 
+    height: 3vh;
+    width: 610px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.message{
+    margin: 5px;
+    padding: 10px;
+}
+
+.form-button{
+    padding: 10px;
+    margin: 5px;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+    background-color: #747264;
+    color: #eeedeb;
+    transition: background-color 0.5s, transform 0.3s;
+}
+.form-button:hover{
+    background-color: #6d6a56;
+    transform: scale(1.05);
+    
+}
+
+
