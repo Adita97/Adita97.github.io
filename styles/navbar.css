@@ -4,7 +4,7 @@ body {
 }
 
 .logo {
-  height: 3vh;
+  height: 4vh;
 }
 
 .navbar {
@@ -15,7 +15,7 @@ body {
   width: 100%;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
   box-shadow: 0 2px 5px #000000; /* Add box shadow for better visibility */
 }
 
