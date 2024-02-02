@@ -85,7 +85,7 @@ z-index: 10;
   transition: 0.5s;
 }
 .navbar a:hover{
-  background-color: #a581ff5b
+  background-color: #a581ff5b;
   box-shadow:0px 0px 200px 86px #a481ff;
   -webkit-box-shadow:0px 0px 200px 86px #a481ff;
   -moz-box-shadow:0px 0px 200px 86px #a481ff;
