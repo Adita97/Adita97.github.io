@@ -16,6 +16,9 @@
     color: #eeedeb;
     padding: 1vh 0;
   }
+  .footer-menu a:hover{
+    text-decoration: underline;
+  }
   .email-input {
     height: 4vh;
     width: 16vw;
