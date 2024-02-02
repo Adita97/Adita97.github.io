@@ -45,8 +45,8 @@
   margin-right: 50px;
   font-family: "Roboto Mono", monospace;
   margin: 2vh 2vw;
-}   
-    /* Book Now Button*/
+}
+/* Book Now Button*/
 
 .button {
   font-family: "Roboto Mono", monospace;
@@ -61,7 +61,7 @@
 }
 
 .button:hover {
-    border: white 2px solid;
+  border: white 2px solid;
 }
 
 /* Media Query For Introduction*/
@@ -109,8 +109,6 @@
   }
 }
 
-
-
 /* End of introduction CSS */
 
 /**** WHY US SECTION ****/
@@ -120,29 +118,29 @@
   padding: 3vh;
 }
 
-
 .section-title {
   font-size: 50px;
   padding: 20px 0;
   text-align: center;
 }
 
-.why-us-card, .why-us-card-reverse{
-display: flex;
-flex-direction: row;
-align-items: center;
-max-width: 80%;
-margin: auto;
-text-align: left;
-
+.why-us-card,
+.why-us-card-reverse {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 80%;
+  margin: auto;
+  text-align: left;
 }
 
-.why-us-card div, .why-us-card-reverse div {
-    font-size: 1.3em;
-    max-width: 60vw;
-    margin: 3vh 4vw;
-
-
+.why-us-card div {
+  margin: 3vh 4vw;
+}
+.why-us-card div,
+.why-us-card-reverse div {
+  font-size: 1.3em;
+  max-width: 60vw;
 }
 
 .why-us-card-reverse h2 {
@@ -204,133 +202,124 @@ text-align: left;
   padding: 12px;
 }
 
-
-
-
-
 /*****ABOUT US PAGE*****/
 
-.about-us{
-    padding: 2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 80%;
-    margin: auto;
-    background-color: #e0ccbe;
+.about-us {
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: auto;
+  background-color: #e0ccbe;
 }
 
-.about-us h1{
-    font-size: 5vh;
+.about-us h1 {
+  font-size: 5vh;
 }
-.about-us p{
-    font-size: 3vh;
-    padding: 2vw 4vw;
+.about-us p {
+  font-size: 3vh;
+  padding: 2vw 4vw;
 }
 
 @media screen and (max-width: 1250px) {
-
-    .about-us{
-        max-width: 100%;
-    }
-    .email-input{
-        width: 25vw;
-    }
+  .about-us {
+    max-width: 100%;
+  }
+  .email-input {
+    width: 25vw;
+  }
 }
-
-
 
 /*****CONTACT US PAGE *****/
 
-.contact-section{
+.contact-section {
   background-color: #e0ccbe;
   padding-top: 6.5vh;
 }
-.contact-container{
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
- 
-    width: 100vw;
-    max-width: 100%;
+.contact-container {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  max-width: 100%;
 }
-.form-container{
-    display: flex;
-    justify-content: center;
-    margin: auto;
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
-.contact-form{
-    display: flex;
-    flex-direction: column;
+.contact-form {
+  display: flex;
+  flex-direction: column;
 }
-.first-row{
-    display: flex;
-    flex-direction: row;
+.first-row {
+  display: flex;
+  flex-direction: row;
 }
 
-.first-row input{
-    padding: 10px;
-    height: 3vh;
-    width: 288px;
-    margin: 5px;
-    max-width: 80vw;
+.first-row input {
+  padding: 10px;
+  height: 3vh;
+  width: 288px;
+  margin: 5px;
+  max-width: 80vw;
 }
 
-.email,.subject{ 
-    height: 3vh;
-    width: 610px;
-    margin: 5px;
-    padding: 10px;
+.email,
+.subject {
+  height: 3vh;
+  width: 610px;
+  margin: 5px;
+  padding: 10px;
 }
 
-.message{
-    margin: 5px;
-    padding: 10px;
+.message {
+  margin: 5px;
+  padding: 10px;
 }
 
-.form-button{
-    padding: 10px;
-    margin: 5px;
-    height: 40px;
-    width: 120px;
-    cursor: pointer;
-    background-color: #747264;
-    color: #eeedeb;
-    transition: background-color 0.5s, transform 0.3s;
+.form-button {
+  padding: 10px;
+  margin: 5px;
+  height: 40px;
+  width: 120px;
+  cursor: pointer;
+  background-color: #747264;
+  color: #eeedeb;
+  transition: background-color 0.5s, transform 0.3s;
 }
-.form-button:hover{
-    background-color: #6d6a56;
-    transform: scale(1.05);
-    
+.form-button:hover {
+  background-color: #6d6a56;
+  transform: scale(1.05);
 }
 
-.map{
+.map {
   margin: auto;
   /* border: 2px solid black; */
   box-shadow: 2px 2px 50px 10px #747264;
 }
 
-@media screen and (max-width: 1200px){
-  *{
-    font-size:1em;
+@media screen and (max-width: 1200px) {
+  * {
+    font-size: 1em;
   }
 }
 
-@media screen and (max-width: 850px){
-
-  .first-row{
+@media screen and (max-width: 850px) {
+  .first-row {
     flex-direction: column;
   }
-  .first-row input{
-    
+  .first-row input {
     width: 80vw;
   }
-   .email, .subject, .message{
+  .email,
+  .subject,
+  .message {
     width: 80vw;
   }
 }
-
-
