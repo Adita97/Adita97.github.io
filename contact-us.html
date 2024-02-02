@@ -8,28 +8,57 @@
   </head>
   <body>
     <div class="navbar">
-      <a href="#"><img class="logo" src="images/camera.png" alt="Camera" /></a>
-      <a href="index.html">Home</a>
-      <a href="about-us.html">About</a>
-      <a href="contact-us.html">Contact us</a>
+      <div>
+        <img class="logo" src="images/logo.png" alt="" />
+      </div>
+      <div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About us</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
     <!--End of Navbar-->
-    <div class="contact-container">
-        <h1 class="section-title">Contact Us</h1>
-    <div class="form-container">
-        
-      <form class="contact-form" action="submit">
-          <div class="first-row">
-            <input type="text" placeholder="First Name*" required/>
-            <input type="text" placeholder="Last Name*" required/>
-          </div>
-          <input class="email" type="email" placeholder="Email Address*" required/>
-          <input class="subject" type="text" placeholder="Subject" required>
-          <textarea placeholder="Your message goes here..." name="message" class="message" cols="30" rows="10"></textarea>
-          <button class="form-button" type="submit">Submit</button>
-      </form>
+    <div class="contact-section">
+      <h1 class="section-title">Contact Us</h1>
+      <div class="contact-container">
+        <div class="form-container">
+          <form class="contact-form" action="submit">
+            <div class="first-row">
+              <input type="text" placeholder="First Name*" required />
+              <input type="text" placeholder="Last Name*" required />
+            </div>
+            <input
+              class="email"
+              type="email"
+              placeholder="Email Address*"
+              required
+            />
+            <input class="subject" type="text" placeholder="Subject" required />
+            <textarea
+              placeholder="Your message goes here..."
+              name="message"
+              class="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <button class="form-button" type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="map footer-section">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.664838406176!2d-80.10497081275241!3d26.75506960689072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d92a0ac5758947%3A0x3ba6792a1334284a!2s141%20Heritage%20Way%2C%20West%20Palm%20Beach%2C%20FL%2033407%2C%20USA!5e0!3m2!1sen!2sro!4v1706527816552!5m2!1sen!2sro"
+            width="500"
+            height="380"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </div>
-</div>
     <!-- Social Media -->
     <div class="social-media-container">
       <h1 class="section-title">Connect with Us</h1>
@@ -109,9 +138,9 @@
       <div class="footer-menu footer-section">
         <h3>Menu</h3>
         <br />
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact</a>
       </div>
       <div class="footer-section">
         <h3>Frame-Worthy News: Join Our Newsletter</h3>
@@ -124,25 +153,14 @@
       <div class="address footer-section">
         <h3>Address</h3>
         <br />
-        <address>
-          Street Address: 141 Heritage Road City: Pixley <br />
+        <p>
+          City Street Address: 141 Heritage Road City: Pixley <br />
           State: CA <br />
           State Full: California <br />
           Zipcode: 93256 <br />
-          Telephone Number: 559-757-5837 <br />
+          559-757-5837 <br />
           Mobile Number: 916-225-7297
-        </address>
-      </div>
-      <div class="map footer-section">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.664838406176!2d-80.10497081275241!3d26.75506960689072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d92a0ac5758947%3A0x3ba6792a1334284a!2s141%20Heritage%20Way%2C%20West%20Palm%20Beach%2C%20FL%2033407%2C%20USA!5e0!3m2!1sen!2sro!4v1706527816552!5m2!1sen!2sro"
-          width="400"
-          height="350"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        </p>
       </div>
     </footer>
   </body>

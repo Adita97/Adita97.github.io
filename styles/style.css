@@ -1,4 +1,5 @@
 @import url(navbar.css);
+@import url(footer.css);
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"); /* GOOGLE FONT OSWALD*/
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 * {
@@ -112,6 +113,7 @@
 
 /* End of introduction CSS */
 
+/**** WHY US SECTION ****/
 .why-us {
   background-color: #e0ccbe;
   text-align: center;
@@ -122,18 +124,9 @@
 .section-title {
   font-size: 50px;
   padding: 20px 0;
+  text-align: center;
 }
 
-/* .why-us-card {
-  display: grid;
-  grid: 1fr/ 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-  text-align: left;
-  padding: 20px 15%;
-  gap: 20px;
-  
-} */
 .why-us-card, .why-us-card-reverse{
 display: flex;
 flex-direction: row;
@@ -151,18 +144,6 @@ text-align: left;
 
 
 }
-
-/* .why-us-card-reverse {
-  display: grid;
-  grid: 1fr/ 1fr 1fr;
-  gap: 20px;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-items: center;
-  text-align: left;
-  padding: 20px 15%;
-} */
-
 
 .why-us-card-reverse h2 {
   margin-bottom: 20px;
@@ -223,39 +204,8 @@ text-align: left;
   padding: 12px;
 }
 
-.footer {
-  background-color: #3c3633;
-  color: #eeedeb;
-  height: 40vh;
-  display: grid;
-  grid: 1fr/ 1fr 1fr 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-  padding: 20px;
-}
-.footer-menu {
-  display: flex;
-  flex-direction: column;
-}
-.footer-menu a {
-  text-decoration: none;
-  color: #eeedeb;
-  padding: 1vh 0;
-}
 
-.email-input {
-  height: 4vh;
-  width: 16vw;
-  margin: 2vh 0;
-  padding: 5px;
-}
 
-.subscribe-button {
-  background-color: #eeedeb;
-  border: 2px solid #e0ccbe;
-  font-size: 15px;
-  padding: 10px 20px;
-}
 
 
 /*****ABOUT US PAGE*****/
@@ -281,15 +231,6 @@ text-align: left;
 
 @media screen and (max-width: 1250px) {
 
-    .footer{
-        margin: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    .map{
-        display: none;
-    }
     .about-us{
         max-width: 100%;
     }
@@ -298,27 +239,23 @@ text-align: left;
     }
 }
 
-@media screen and (max-width: 880px) {
-    .footer{
-    flex-direction: column;
-    height: 100vh;
-    }
-    .footer-section{
-        padding: 1.5vh 0;
-        font-size: 1.5em;
-    }
-    .email-input{
-        width: 80vw;
-    }
-}
+
 
 /*****CONTACT US PAGE *****/
+
+.contact-section{
+  background-color: #e0ccbe;
+  padding-top: 6.5vh;
+}
 .contact-container{
     text-align: center;
     display: flex;
-    flex-direction: column;
-    background-color: #e0ccbe;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ 
     width: 100vw;
+    max-width: 100%;
 }
 .form-container{
     display: flex;
@@ -369,6 +306,13 @@ text-align: left;
     transform: scale(1.05);
     
 }
+
+.map{
+  margin: auto;
+  /* border: 2px solid black; */
+  box-shadow: 2px 2px 50px 10px #747264;
+}
+
 @media screen and (max-width: 1200px){
   *{
     font-size:1em;

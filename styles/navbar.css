@@ -7,88 +7,66 @@ body {
   height: 4vh;
 }
 
-/*.navbar {
-  margin: 0;
-  background-color: #747264;
-  overflow: hidden;
-  height: 3.5rem;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 5px #000000; 
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  height: 100%;
-  transition: background-color 0.5s, transform 0.3s; 
-}
 
-.navbar a:hover {
-  background-color: #555;
-  transform: scale(1.1);
-}
 
-/* Responsive Styles 
-
-@media screen and (max-width: 768px) {
-  .navbar a {
-    display: flex;
-    justify-content: center;
-  }
-}  */
-
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
   position: fixed;
   top: 0;
-box-sizing: border-box;
-width: 100vw;
-max-width: 100%;
-background-color: #747264;
--webkit-box-shadow:0 17px 59px 11px rgba(63, 0, 199, 0.62);
--moz-box-shadow:0 17px 59px 11px rgba(63, 0, 199, 0.62);
-box-shadow:0 17px 39px 11px rgba(63, 0, 199, 0.62);
-z-index: 10;
-
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100%;
+  background-color: #747264;
+  box-shadow: 0 17px 39px 11px rgba(63, 0, 199, 0.62);
+  z-index: 10;
+  transition: box-shadow 0.3s ease;
+}
+.navbar:not(:hover) {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
-.navbar ul{
+.navbar ul {
   position: relative;
   height: 70px;
-  top:0;
-
+  top: 0;
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar li {
-  display: inline-block;
   margin-left: 3vw;
   width: 90px;
   height: 40px;
-  padding-top: 25px ;
+  padding-top: 25px;
   font-weight: bold;
   list-style: none;
   text-align: center;
   text-transform: uppercase;
 }
-.navbar a{
+.navbar a {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   transition: 0.5s;
 }
-.navbar a:hover{
+.navbar a:hover {
   background-color: #a581ff5b;
-  box-shadow:0px 0px 200px 86px #a481ff;
-  -webkit-box-shadow:0px 0px 200px 86px #a481ff;
-  -moz-box-shadow:0px 0px 200px 86px #a481ff;
+  box-shadow: 0px 0px 100px 46px #a481ff;
   text-decoration: underline white;
+}
 
+@media screen and (max-width: 768px) {
+  .navbar ul{
+    padding: 0;
+  }
+
+  .navbar li{
+    margin-left:1vw ;
+    width: 85px;
+  }
 }
