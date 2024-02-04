@@ -321,7 +321,7 @@ iframe{
     flex-direction: column;
   }
 iframe{
-  width: 70vw;
+  width: 80vw;
 }
 }
 
@@ -336,5 +336,12 @@ iframe{
   .subject,
   .message {
     width: 80vw;
+  }
+  .section-title{
+    font-size: 8vw;
+  }
+  .social-media-icon{
+    width: 8vw;
+    height: auto;
   }
 }
