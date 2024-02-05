@@ -300,7 +300,7 @@
 
 .map {
   box-shadow: 2px 2px 50px 10px #747264;
-  margin: 50px 0;
+  margin: 50px auto;
   padding: 0;
 }
 iframe {
