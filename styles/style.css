@@ -2,9 +2,9 @@
 @import url(footer.css);
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"); /* GOOGLE FONT OSWALD*/
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
 * {
   margin: 0;
-  /* max-width: 100%; */
 }
 
 .introduction {
@@ -107,6 +107,9 @@
   .introduction-text h1 {
     font-size: 4vh;
   }
+  .button{
+    margin: 10px auto;
+  }
 }
 
 /* End of introduction CSS */
@@ -134,7 +137,6 @@
   text-align: left;
 }
 
-
 .why-us-card div,
 .why-us-card-reverse div {
   font-size: 1.3em;
@@ -150,6 +152,8 @@
   padding: 2% 5%;
   order: 1;
 }
+
+/***Media Query for WHY US section***/
 
 @media screen and (max-width: 1240px) {
   .why-us-card {
@@ -295,34 +299,30 @@
 }
 
 .map {
-  
-  /* border: 2px solid black; */
   box-shadow: 2px 2px 50px 10px #747264;
   margin: 50px 0;
   padding: 0;
-  /* width:500px;
-  height:380px; */
 }
-iframe{
-  width:500px;
-  height:380px;
+iframe {
+  width: 500px;
+  height: 380px;
   max-width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
-.section-title{
-  font-size: 6vw;
-}
-.social-media-icon{
-  width: 6vw;
-  height: auto;
-}
-  .contact-container{
+  .section-title {
+    font-size: 6vw;
+  }
+  .social-media-icon {
+    width: 6vw;
+    height: auto;
+  }
+  .contact-container {
     flex-direction: column;
   }
-iframe{
-  width: 80vw;
-}
+  iframe {
+    width: 80vw;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -337,10 +337,10 @@ iframe{
   .message {
     width: 80vw;
   }
-  .section-title{
+  .section-title {
     font-size: 8vw;
   }
-  .social-media-icon{
+  .social-media-icon {
     width: 8vw;
     height: auto;
   }

@@ -31,6 +31,13 @@
     border: 2px solid #e0ccbe;
     font-size: 15px;
     padding: 10px 20px;
+    font-family: "Roboto Mono", monospace;
+    width: 130px;
+    display: block;
+    text-decoration: none;
+    background-color: #e0ccbe;
+    text-align: center;
+    color: #3c3633;
   }  
 
 
