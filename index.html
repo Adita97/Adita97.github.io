@@ -6,7 +6,9 @@
     <title>CelestialCapture Studios</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+    <script src="script.js" defer></script>
   </head>
+  <!--Beginning of content-->
   <body>
     <div class="navbar">
       <div>
@@ -35,7 +37,7 @@
           Your indelible memories start here, framed in the beauty of each
           captured instant.
         </h4>
-        <a class="button" href="#">Book now</a>
+        <a id="book-now-button" class="button" href="#">Book now</a>
       </div>
     </div>
     <!--End of introduction-->
@@ -175,9 +177,16 @@
       </div>
       <div class="footer-section">
         <h3>Frame-Worthy News: Join Our Newsletter</h3>
-        <form action="submit">
+        <form id="newsletter-form">
           <input class="email-input" type="email" placeholder="Email" /> <br />
-          <button class="subscribe-button" type="submit">Subscribe</button>
+          <button
+            id="ssubscribe-button"
+            onclick="submitOnClick()"
+            class="subscribe-button"
+            type="button"
+          >
+            Subscribe
+          </button>
         </form>
       </div>
 

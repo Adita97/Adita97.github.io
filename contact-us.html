@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
+
     <title>CelestialCapture</title>
   </head>
   <body>
@@ -24,26 +25,42 @@
       <h1 class="section-title">Contact Us</h1>
       <div class="contact-container">
         <div class="form-container">
-          <form class="contact-form" action="submit">
+          <form class="contact-form" onsubmit="return validateForm(event)">
+            <span id="name-error" class="error"></span>
             <div class="first-row">
-              <input type="text" placeholder="First Name*" required />
-              <input type="text" placeholder="Last Name*" required />
+              <input type="text" id="first-name" placeholder="First Name*" />
+
+              <input type="text" id="last-name" placeholder="Last Name*" />
+              <span></span>
             </div>
+            <span id="emailError" class="error"></span>
             <input
               class="email"
-              type="email"
+              id="contact-email"
+              type="text"
               placeholder="Email Address*"
-              required
             />
-            <input class="subject" type="text" placeholder="Subject" required />
+            <span id="subjectError" class="error"></span>
+            <input
+              id="subject"
+              class="subject"
+              type="text"
+              placeholder="Subject"
+            />
+            <span id="messageError" class="error"></span>
             <textarea
+              id="message"
               placeholder="Your message goes here..."
               name="message"
               class="message"
               cols="30"
               rows="10"
             ></textarea>
-            <button class="form-button" type="submit">Submit</button>
+            <div class="submit-container">
+              <input class="form-button" type="submit" value="Submit" />
+              <h1 id="submitCount">Count</h1>
+            </div>
+            <!-- <button class="form-button" type="submit">Submit</button> -->
           </form>
         </div>
         <div class="map footer-section">
@@ -161,5 +178,6 @@
         </p>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
