@@ -39,6 +39,7 @@ function validateForm(event) {
     isValid = false;
   } else if (!isValidEmail(email)) {
     emailError.textContent = "Email format is not valid";
+    isValid = true;
   } else {
     emailError.textContent = "";
   }
@@ -63,21 +64,32 @@ function validateForm(event) {
       "The message cannot be shorter than 20 characters";
     isValid = false;
     console.log(message.length);
-  } else{
-    messageError.textContent="";
+  } else {
+    messageError.textContent = "";
   }
 
   //Increase Submit Count
-  if(isValid) {
-    
-submitCount++
-document.getElementById('submitCount').innerText = submitCount;
-console.log(submitCount);
+  if (isValid) {
+    submitCount++;
+    document.getElementById("submitCount").innerText = submitCount;
+    console.log(submitCount);
+
+
+       // Save data to local storage
+       const formData = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        subject: subject,
+        message: message
+      };
+      localStorage.setItem("formData", JSON.stringify(formData));
+
   }
   return isValid;
 }
 //Validate Email Format
 function isValidEmail(email) {
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
+  let emailValidationRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailValidationRegex.test(email);
 }

@@ -6,23 +6,13 @@
     <title>CelestialCapture Studios</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
-    <script src="script.js" defer></script>
-  </head>
-  <!--Beginning of content-->
-  <body>
-    <div class="navbar">
-      <div>
-        <img class="logo" src="images/logo.png" alt="" />
-      </div>
-      <div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-us.html">About us</a></li>
-          <li><a href="contact-us.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
 
+    <script src="scripts/slideshow.js" defer></script>
+    <script src="scripts/navbar.js"></script>
+  </head>
+
+  <body>
+    <!--Introduction -->
     <div class="introduction">
       <img control src="images/warm-portrait.jpg" alt="" />
       <div class="introduction-text">
@@ -42,6 +32,7 @@
     </div>
     <!--End of introduction-->
 
+    <!--Why Us Section-->
     <div class="why-us">
       <h1 class="section-title">Why us?</h1>
       <div class="why-us-container">
@@ -91,9 +82,35 @@
         </div>
       </div>
     </div>
+    <!-- End of Why Us Section -->
 
+    <!-- SlideShow -->
+    <div class="slideshow-container">
+      <!-- Slides -->
+      <div class="mySlides">
+        <img src="images/wedding.jpg" alt="Slide 1" />
+        <div>
+          <h1>Wedding Photography</h1>
+        </div>
+      </div>
+
+      <div class="mySlides">
+        <img src="images/product.jpg" alt="Slide 2" />
+        <div>
+          <h1>Product Photography</h1>
+        </div>
+      </div>
+
+      <div class="mySlides">
+        <img src="images/camera.png" alt="Slide 3" />
+      </div>
+
+      <!-- Prev and Next buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
     <!-- Social Media -->
-    <div class="social-media-container">
+    <!-- <div class="social-media-container">
       <h1 class="section-title">Connect with Us</h1>
       <div class="social-media">
         <a href="https://facebook.com" target="_blank">
@@ -163,11 +180,11 @@
             </svg></div
         ></a>
       </div>
-    </div>
-    <hr />
+    </div> -->
+    <!-- <hr /> -->
     <!-- End of Connect with Us Section-->
 
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="footer-menu footer-section">
         <h3>Menu</h3>
         <br />
@@ -202,6 +219,10 @@
           Mobile Number: 916-225-7297
         </p>
       </div>
-    </footer>
+    </footer> -->
+
+    <div id="socialMedia"></div>
+    <div id="footer"></div>
+    <script src="scripts/footer.js"></script>
   </body>
 </html>
