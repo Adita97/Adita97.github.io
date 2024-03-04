@@ -13,7 +13,8 @@ function validateForm(event) {
 
   //Errors
 
-  let nameError = document.getElementById("name-error");
+  let firstNameError = document.getElementById("firstNameError");
+  let lastNameError = document.getElementById("lastNameError");
   let emailError = document.getElementById("emailError");
   let subjectError = document.getElementById("subjectError");
   let messageError = document.getElementById("messageError");
@@ -23,15 +24,19 @@ function validateForm(event) {
   //Validate First name and Last name
 
   if (firstName === "") {
-    nameError.textContent = "First Name is required";
+    firstNameError.textContent = "First Name is required";
     isValid = false;
-  } else if (lastName === "") {
-    nameError.textContent = "Last Name is required";
-    isValid = false;
-  } else {
-    nameError.textContent = "";
+  }else {
+    firstNameError.textContent = "";
+    lastNameError.textContent = "";
   }
 
+  if (lastName === "") {
+    lastNameError.textContent = "Last Name is required";
+    isValid = false;
+  } else {
+    lastNameError.textContent = "";
+  }
   // Validate Email Address
 
   if (email === "") {

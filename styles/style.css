@@ -258,7 +258,7 @@
   padding: 6.5vh 0;
 }
 .contact-container {
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: row;
   justify-content: center;

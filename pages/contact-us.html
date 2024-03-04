@@ -15,11 +15,15 @@
       <div class="contact-container">
         <div class="form-container">
           <form class="contact-form" onsubmit="return validateForm(event)">
-            <span id="name-error" class="error"></span>
             <div class="first-row">
-              <input type="text" id="first-name" placeholder="First Name*" />
-
-              <input type="text" id="last-name" placeholder="Last Name*" />
+              <div>
+                <span id="firstNameError" class="error"></span><br />
+                <input type="text" id="first-name" placeholder="First Name*" />
+              </div>
+              <div>
+                <span id="lastNameError" class="error"></span><br />
+                <input type="text" id="last-name" placeholder="Last Name*" />
+              </div>
               <span></span>
             </div>
             <span id="emailError" class="error"></span>
@@ -47,7 +51,7 @@
             ></textarea>
             <div class="submit-container">
               <input class="form-button" type="submit" value="Submit" />
-              <h1 id="submitCount">Count</h1>
+              <h1 id="submitCount"></h1>
             </div>
             <!-- <button class="form-button" type="submit">Submit</button> -->
           </form>

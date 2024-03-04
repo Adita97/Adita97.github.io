@@ -19,6 +19,14 @@
     background-color: #e0ccbe;
     border: 1px solid;
 }
+@media screen and(max-width: 1026px) { 
+    #searchInput {
+        width: 60vw;
+    }
+    .search-button{
+        width: 80px;
+    }
+  }
 
 .search-button:hover{
     transform: scale(1.1);
@@ -37,3 +45,4 @@
   .apiImage:hover {
     transform: scale(1.3);
   }
+
