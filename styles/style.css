@@ -1,5 +1,7 @@
 @import url(navbar.css);
 @import url(footer.css);
+@import url(slideshow.css);
+@import url(gallery.css);
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"); /* GOOGLE FONT OSWALD*/
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
@@ -174,6 +176,17 @@
   }
 }
 
+@media screen and (max-width: 670px) {
+  .why-us-card, .why-us-card-reverse {
+  max-width: 100%;
+  margin: 3vh 0;
+}
+.why-us-card div, .why-us-card-reverse div {
+  max-width: 100%;
+}
+
+}
+
 /* Social Media section*/
 
 .social-media-container {
@@ -204,6 +217,11 @@
   border-radius: 100%;
   padding: 12px;
 }
+.social-media div:hover{
+  border-color: #e0ccbe;
+  z-index: 4;
+}
+
 
 /*****ABOUT US PAGE*****/
 
@@ -245,7 +263,7 @@
   padding: 6.5vh 0;
 }
 .contact-container {
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -258,7 +276,25 @@
   display: flex;
   justify-content: center;
   margin: auto;
+  
 }
+.form-control {
+  width: 45vw;
+  height: 6vh;
+}
+
+.btn{
+  width: 7vw
+}
+@media screen and (max-width: 1200px) {
+  .form-control {
+    width: 80vw !important;
+  }
+  .btn{
+    width: 20vw;
+  }
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -289,6 +325,15 @@
   padding: 10px;
 }
 
+.submit-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+.submit-container h1{
+  font-size: 20px;
+}
+
 .form-button {
   padding: 10px;
   margin: 5px;
@@ -315,6 +360,16 @@ iframe {
   max-width: 100%;
 }
 
+.error{
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+/****  MEDIA QUERY  ****/
+
 @media screen and (max-width: 1200px) {
   .section-title {
     font-size: 6vw;
@@ -330,6 +385,7 @@ iframe {
     width: 80vw;
   }
 }
+
 
 @media screen and (max-width: 850px) {
   .first-row {
@@ -351,3 +407,4 @@ iframe {
     height: auto;
   }
 }
+

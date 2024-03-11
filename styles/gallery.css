@@ -1,0 +1,48 @@
+.search-container{
+    display: flex;
+    justify-content: center;
+}
+
+#searchInput{
+    margin: 20px;
+    padding: 15px;
+    width: 20vw;
+}
+
+#searchInput:focus{
+    transform: scale(1.1);
+}
+
+.search-button{
+    padding: 11px;
+    font-size: 20px;
+    background-color: #e0ccbe;
+    border: 1px solid;
+}
+@media screen and(max-width: 1026px) { 
+    #searchInput {
+        width: 60vw;
+    }
+    .search-button{
+        width: 80px;
+    }
+  }
+
+.search-button:hover{
+    transform: scale(1.1);
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+#gallery img {
+    width: auto;
+    height: 300px;
+    margin: 10px;
+  }
+  #gallery img:hover {
+    transform: scale(1.2);
+  }
+
