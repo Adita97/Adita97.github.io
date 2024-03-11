@@ -28,7 +28,7 @@ function validateForm(event) {
     isValid = false;
   }else {
     firstNameError.textContent = "";
-    lastNameError.textContent = "";
+
   }
 
   if (lastName === "") {
@@ -77,7 +77,7 @@ function validateForm(event) {
   if (isValid) {
     submitCount++;
     document.getElementById("submitCount").innerText = submitCount;
-    console.log(submitCount);
+    
 
 
        // Save data to local storage

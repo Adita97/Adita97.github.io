@@ -217,6 +217,11 @@
   border-radius: 100%;
   padding: 12px;
 }
+.social-media div:hover{
+  border-color: #e0ccbe;
+  z-index: 4;
+}
+
 
 /*****ABOUT US PAGE*****/
 
@@ -271,7 +276,25 @@
   display: flex;
   justify-content: center;
   margin: auto;
+  
 }
+.form-control {
+  width: 45vw;
+  height: 6vh;
+}
+
+.btn{
+  width: 7vw
+}
+@media screen and (max-width: 1200px) {
+  .form-control {
+    width: 80vw !important;
+  }
+  .btn{
+    width: 20vw;
+  }
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;

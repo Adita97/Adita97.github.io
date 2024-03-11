@@ -39,10 +39,10 @@
   }
 #gallery img {
     width: auto;
-    height: 400px;
+    height: 300px;
     margin: 10px;
   }
-  .apiImage:hover {
-    transform: scale(1.3);
+  #gallery img:hover {
+    transform: scale(1.2);
   }
 

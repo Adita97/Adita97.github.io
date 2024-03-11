@@ -51,7 +51,9 @@
         font-weight: bold;
     }
 
-
+#socialMedia{
+  margin: 20px 0 1px 0;
+}
 
 @media screen and (max-width: 1250px){
   .email-input {
