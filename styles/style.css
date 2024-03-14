@@ -256,6 +256,15 @@
   }
 }
 
+/*BOOTSTRAP*/
+.card-img-top{
+  height: 20vh;
+  object-fit: cover;
+  object-position: top;
+}
+
+
+
 /*****CONTACT US PAGE *****/
 
 .contact-section {

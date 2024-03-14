@@ -80,6 +80,11 @@ body {
 
 /* Bootstrap*/
 
+.nav-link{
+  display: inline !important;
+  padding: 0 !important;
+}
+
 bg-body-tertiary {
   background-color: #747264 !important;
 }
