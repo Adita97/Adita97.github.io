@@ -35,10 +35,12 @@ const Video = ({ onComplete }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState(null);
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
-    
+    let loadingTimeout;
+
     const handleError = (e) => {
       console.error('Video error:', e);
       const videoError = video.error;
@@ -47,11 +49,13 @@ const Video = ({ onComplete }) => {
         console.error('Error message:', videoError.message);
         setError(`Video error: ${videoError.message || 'Unknown error'}`);
       }
+      setIsLoading(false);
     };
 
     const handleLoadStart = () => {
       console.log('Video loading started');
       setLoadingProgress(0);
+      setIsLoading(true);
     };
 
     const handleProgress = (e) => {
@@ -64,8 +68,7 @@ const Video = ({ onComplete }) => {
 
     const handleCanPlay = () => {
       console.log('Video can play');
-      console.log('Video ready state:', video.readyState);
-      console.log('Video network state:', video.networkState);
+      setIsLoading(false);
     };
 
     const handleLoadedMetadata = () => {
@@ -78,20 +81,17 @@ const Video = ({ onComplete }) => {
 
     const handleLoadedData = () => {
       console.log('Video data loaded');
-      console.log('Video ready state:', video.readyState);
-      console.log('Video network state:', video.networkState);
+      setIsLoading(false);
     };
 
     const handleStalled = () => {
       console.log('Video stalled');
-      console.log('Video ready state:', video.readyState);
-      console.log('Video network state:', video.networkState);
+      setIsLoading(true);
     };
 
     const handleWaiting = () => {
       console.log('Video waiting for data');
-      console.log('Video ready state:', video.readyState);
-      console.log('Video network state:', video.networkState);
+      setIsLoading(true);
     };
 
     const playVideo = async () => {
@@ -103,6 +103,7 @@ const Video = ({ onComplete }) => {
         // First try to play with sound
         await video.play();
         console.log('Video playing successfully with sound');
+        setIsPlaying(true);
       } catch (error) {
         console.log('Initial play failed, trying muted:', error);
         // If that fails, try muted
@@ -110,6 +111,7 @@ const Video = ({ onComplete }) => {
         try {
           await video.play();
           console.log('Video playing successfully muted');
+          setIsPlaying(true);
           // Once playing, try to unmute
           video.muted = false;
           console.log('Attempting to unmute video');
@@ -130,6 +132,15 @@ const Video = ({ onComplete }) => {
     video.addEventListener('stalled', handleStalled);
     video.addEventListener('waiting', handleWaiting);
 
+    // Set a timeout to detect if loading takes too long
+    loadingTimeout = setTimeout(() => {
+      if (isLoading) {
+        console.error('Video loading timeout');
+        setError('Video loading timeout. Please try refreshing the page.');
+        setIsLoading(false);
+      }
+    }, 30000); // 30 seconds timeout
+
     // Try to play when the video is loaded
     if (video.readyState >= 2) {
       console.log('Video already loaded, attempting to play');
@@ -140,6 +151,7 @@ const Video = ({ onComplete }) => {
     }
 
     return () => {
+      clearTimeout(loadingTimeout);
       video.removeEventListener('error', handleError);
       video.removeEventListener('loadstart', handleLoadStart);
       video.removeEventListener('progress', handleProgress);
@@ -165,8 +177,12 @@ const Video = ({ onComplete }) => {
   return (
     <VideoContainer>
       {error && <ErrorMessage>{error}</ErrorMessage>}
-      {loadingProgress > 0 && loadingProgress < 100 && (
-        <ErrorMessage>Loading video: {loadingProgress.toFixed(0)}%</ErrorMessage>
+      {isLoading && (
+        <ErrorMessage>
+          {loadingProgress > 0 
+            ? `Loading video: ${loadingProgress.toFixed(0)}%`
+            : 'Loading video...'}
+        </ErrorMessage>
       )}
       <StyledVideo
         ref={videoRef}
@@ -178,8 +194,9 @@ const Video = ({ onComplete }) => {
         muted={false}
         disablePictureInPicture
         controlsList="nodownload noremoteplayback nofullscreen noplaybackrate"
+        preload="auto"
       >
-        <source src="wedding-video.mp4" type="video/mp4" />
+        <source src="/wedding-video.mp4" type="video/mp4" />
         Browserul dvs. nu suportă tag-ul video.
       </StyledVideo>
     </VideoContainer>
