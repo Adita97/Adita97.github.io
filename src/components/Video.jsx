@@ -195,7 +195,9 @@ const Video = ({ onComplete }) => {
         disablePictureInPicture
         controlsList="nodownload noremoteplayback nofullscreen noplaybackrate"
         preload="auto"
+        crossOrigin="anonymous"
       >
+        <source src="/wedding-video.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
         <source src="/wedding-video.mp4" type="video/mp4" />
         Browserul dvs. nu suportă tag-ul video.
       </StyledVideo>
