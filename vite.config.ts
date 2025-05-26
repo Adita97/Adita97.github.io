@@ -12,7 +12,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: undefined,
-        assetFileNames: 'assets/[name].[hash][extname]',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'wedding-video.mp4') {
+            return 'wedding-video.mp4'
+          }
+          return 'assets/[name].[hash][extname]'
+        },
         chunkFileNames: 'assets/[name].[hash].js',
         entryFileNames: 'assets/[name].[hash].js'
       }
