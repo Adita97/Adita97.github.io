@@ -34,6 +34,7 @@ const Video = ({ onComplete }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState(null);
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -50,21 +51,55 @@ const Video = ({ onComplete }) => {
 
     const handleLoadStart = () => {
       console.log('Video loading started');
+      setLoadingProgress(0);
+    };
+
+    const handleProgress = (e) => {
+      if (video.buffered.length > 0) {
+        const progress = (video.buffered.end(video.buffered.length - 1) / video.duration) * 100;
+        console.log('Loading progress:', progress.toFixed(2) + '%');
+        setLoadingProgress(progress);
+      }
     };
 
     const handleCanPlay = () => {
       console.log('Video can play');
+      console.log('Video ready state:', video.readyState);
+      console.log('Video network state:', video.networkState);
     };
 
     const handleLoadedMetadata = () => {
       console.log('Video metadata loaded');
       console.log('Video duration:', video.duration);
       console.log('Video ready state:', video.readyState);
+      console.log('Video network state:', video.networkState);
+      console.log('Video current source:', video.currentSrc);
+    };
+
+    const handleLoadedData = () => {
+      console.log('Video data loaded');
+      console.log('Video ready state:', video.readyState);
+      console.log('Video network state:', video.networkState);
+    };
+
+    const handleStalled = () => {
+      console.log('Video stalled');
+      console.log('Video ready state:', video.readyState);
+      console.log('Video network state:', video.networkState);
+    };
+
+    const handleWaiting = () => {
+      console.log('Video waiting for data');
+      console.log('Video ready state:', video.readyState);
+      console.log('Video network state:', video.networkState);
     };
 
     const playVideo = async () => {
       try {
         console.log('Attempting to play video...');
+        console.log('Video ready state before play:', video.readyState);
+        console.log('Video network state before play:', video.networkState);
+        
         // First try to play with sound
         await video.play();
         console.log('Video playing successfully with sound');
@@ -88,8 +123,12 @@ const Video = ({ onComplete }) => {
     // Add event listeners
     video.addEventListener('error', handleError);
     video.addEventListener('loadstart', handleLoadStart);
+    video.addEventListener('progress', handleProgress);
     video.addEventListener('canplay', handleCanPlay);
     video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener('loadeddata', handleLoadedData);
+    video.addEventListener('stalled', handleStalled);
+    video.addEventListener('waiting', handleWaiting);
 
     // Try to play when the video is loaded
     if (video.readyState >= 2) {
@@ -103,8 +142,12 @@ const Video = ({ onComplete }) => {
     return () => {
       video.removeEventListener('error', handleError);
       video.removeEventListener('loadstart', handleLoadStart);
+      video.removeEventListener('progress', handleProgress);
       video.removeEventListener('canplay', handleCanPlay);
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      video.removeEventListener('loadeddata', handleLoadedData);
+      video.removeEventListener('stalled', handleStalled);
+      video.removeEventListener('waiting', handleWaiting);
       video.removeEventListener('loadeddata', playVideo);
     };
   }, []);
@@ -122,6 +165,9 @@ const Video = ({ onComplete }) => {
   return (
     <VideoContainer>
       {error && <ErrorMessage>{error}</ErrorMessage>}
+      {loadingProgress > 0 && loadingProgress < 100 && (
+        <ErrorMessage>Loading video: {loadingProgress.toFixed(0)}%</ErrorMessage>
+      )}
       <StyledVideo
         ref={videoRef}
         onEnded={handleVideoEnd}
