@@ -36,9 +36,14 @@ const Video = ({ onComplete }) => {
   const [error, setError] = useState(null);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentSource, setCurrentSource] = useState(0);
 
-  // GitHub raw content URL for the video
-  const videoUrl = 'https://raw.githubusercontent.com/Adita97/Adita97.github.io/main/public/wedding-video.mp4';
+  const videoSources = [
+    '/wedding-video2.mp4',
+    'wedding-video2.mp4',
+    './wedding-video2.mp4',
+    '../wedding-video2.mp4'
+  ];
 
   useEffect(() => {
     const video = videoRef.current;
@@ -50,9 +55,16 @@ const Video = ({ onComplete }) => {
       if (videoError) {
         console.error('Error code:', videoError.code);
         console.error('Error message:', videoError.message);
-        setError(`Video error: ${videoError.message || 'Unknown error'}`);
+        
+        // Try next source if available
+        if (currentSource < videoSources.length - 1) {
+          console.log('Trying next video source...');
+          setCurrentSource(prev => prev + 1);
+        } else {
+          setError(`Video error: ${videoError.message || 'Unknown error'}`);
+          setIsLoading(false);
+        }
       }
-      setIsLoading(false);
     };
 
     const handleLoadStart = () => {
@@ -139,10 +151,15 @@ const Video = ({ onComplete }) => {
     loadingTimeout = setTimeout(() => {
       if (isLoading) {
         console.error('Video loading timeout');
-        setError('Video loading timeout. Please try refreshing the page.');
-        setIsLoading(false);
+        if (currentSource < videoSources.length - 1) {
+          console.log('Trying next video source due to timeout...');
+          setCurrentSource(prev => prev + 1);
+        } else {
+          setError('Video loading timeout. Please try refreshing the page.');
+          setIsLoading(false);
+        }
       }
-    }, 30000); // 30 seconds timeout
+    }, 10000); // 10 seconds timeout
 
     // Try to play when the video is loaded
     if (video.readyState >= 2) {
@@ -165,7 +182,7 @@ const Video = ({ onComplete }) => {
       video.removeEventListener('waiting', handleWaiting);
       video.removeEventListener('loadeddata', playVideo);
     };
-  }, []);
+  }, [currentSource]);
 
   const handleVideoEnd = () => {
     console.log('Video ended');
@@ -200,7 +217,7 @@ const Video = ({ onComplete }) => {
         preload="auto"
         crossOrigin="anonymous"
       >
-        <source src={videoUrl} type="video/mp4" />
+        <source src={videoSources[currentSource]} type="video/mp4" />
         Browserul dvs. nu suportă tag-ul video.
       </StyledVideo>
     </VideoContainer>
