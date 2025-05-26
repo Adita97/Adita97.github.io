@@ -133,7 +133,7 @@ const Video = ({ onComplete }) => {
         disablePictureInPicture
         controlsList="nodownload noremoteplayback nofullscreen noplaybackrate"
       >
-        <source src="/Adita97.github.io/wedding-video.mp4" type="video/mp4" />
+        <source src="wedding-video.mp4" type="video/mp4" />
         Browserul dvs. nu suportă tag-ul video.
       </StyledVideo>
     </VideoContainer>
