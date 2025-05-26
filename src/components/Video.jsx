@@ -74,10 +74,11 @@ const Video = ({ onComplete }) => {
         controls={false}
         autoPlay
         playsInline
+        muted={false}
         disablePictureInPicture
         controlsList="nodownload noremoteplayback nofullscreen noplaybackrate"
       >
-        <source src="/wedding-video.mp4" type="video/mp4" />
+        <source src="/Daniel & Loredana/wedding-video.mp4" type="video/mp4" />
         Browserul dvs. nu suportă tag-ul video.
       </StyledVideo>
     </VideoContainer>
