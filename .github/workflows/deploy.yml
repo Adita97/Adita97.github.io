@@ -30,15 +30,10 @@ jobs:
       - name: Install dependencies
         run: |
           rm -rf node_modules package-lock.json
-          npm install
-          npm install -g typescript
-
-      - name: Type check
-        run: npm run typecheck || true
+          npm install --no-audit --no-fund
 
       - name: Build
-        run: |
-          npm run build
+        run: npm run build
         env:
           CI: false
           NODE_ENV: production
