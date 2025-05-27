@@ -34,6 +34,7 @@ const Input = styled.input`
   width: 80vw;
   max-width: 300px;
   background-color: white;
+  color: #333333;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   
   &:focus {
