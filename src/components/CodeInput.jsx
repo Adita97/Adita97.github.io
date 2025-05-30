@@ -83,7 +83,7 @@ const CodeInput = ({ onComplete }) => {
   const [error, setError] = useState('');
 
   const handleSubmit = () => {
-    if (code === '12345') {
+    if (code === '31052025') {
       onComplete();
     } else {
       setError('Cod invalid. Vă rugăm să încercați din nou.');
