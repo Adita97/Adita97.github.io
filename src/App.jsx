@@ -21,7 +21,7 @@ const App = () => {
 
   const handleCodeComplete = () => {
     // Replace with your desired redirect URL
-    window.location.href = 'https://revolut.me/p/MJpL7QSFEk';
+    window.location.href = 'https://revolut.me/p/rmb2uqBo79';
   };
 
   const renderCurrentStep = () => {
