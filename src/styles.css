@@ -1,0 +1,1045 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&family=Great+Vibes&display=swap");
+
+:root {
+  --gold: linear-gradient(90deg, #d4af37, #ffd966);
+  --beige: #f5e6d3;
+  --soft-white: #fff9f0;
+  --glass: rgba(255, 255, 255, 0.12);
+  --feather-gold: #d4af37;
+  --invitation-gold: #c4a052;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+.invite-root {
+  position: relative;
+  min-height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  background-color: #000;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6) saturate(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(245, 230, 211, 0.15),
+      rgba(255, 249, 240, 0.2)
+    ),
+    linear-gradient(120deg, rgba(212, 175, 55, 0.1), transparent),
+    url("/assets/");
+  background-size: cover, cover, 800px auto;
+  opacity: 0.9;
+  mix-blend-mode: soft-light;
+}
+
+.invitation-card {
+  color: var(--soft-white);
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 40px;
+  position: relative;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(245, 230, 211, 0.08)
+  );
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.invitation-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.feather-top,
+.feather-bottom {
+  z-index: 100;
+  position: absolute;
+  width: 300px;
+  height: 120px;
+  background-image: url("/assets/feather-new.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.invitation-card.invitation-full {
+  /* ensure the card is the positioning context and allows visible overflow for decorative assets */
+  position: relative;
+  overflow: visible;
+}
+
+.invitation-card.invitation-full > .feather-top {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  transform: rotate(-5deg);
+}
+
+.invitation-card.invitation-full > .feather-bottom {
+  position: absolute;
+  bottom: 12px; /* anchored to the invitation container bottom */
+  right: 12px; /* anchored to the invitation container right */
+  transform: rotate(175deg);
+}
+
+@media screen and (max-width: 600px) {
+  .invitation-card.invitation-full > .feather-top {
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    transform: rotate(5deg);
+  }
+
+  .invitation-card.invitation-full > .feather-bottom {
+    position: absolute;
+    bottom: 0px; /* anchored to the invitation container bottom */
+    right: 0px; /* anchored to the invitation container right */
+    transform: rotate(175deg);
+  }
+}
+
+.together-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 42px;
+  color: var(--feather-gold);
+  margin: 0 0 40px;
+  font-weight: normal;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.honor-text,
+.presence-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin: 8px 0;
+  color: var(--soft-white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.couple-names {
+  font-family: "Playfair Display", serif;
+  font-size: 72px;
+  margin: 40px 0;
+  color: var(--feather-gold);
+  line-height: 1.4;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.and {
+  display: block;
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  margin: 20px 0;
+  color: var(--soft-white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.date-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 36px;
+  margin: 40px 0;
+  color: var(--feather-gold);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.details {
+  margin: 30px 0;
+}
+
+.time,
+.venue {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin: 12px 0;
+  color: var(--soft-white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.venue-link {
+  color: var(--soft-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.reception-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 32px;
+  margin: 50px 0;
+  color: var(--feather-gold);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rsvp-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.guest-name {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--soft-white);
+  margin-bottom: 30px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.confirm-btn {
+  background: var(--feather-gold);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-btn:hover {
+  background: #b38d3d;
+  transform: translateY(-2px);
+}
+
+.invitation-message {
+  font-family: "Great Vibes", cursive;
+  font-size: 28px;
+  color: var(--soft-white);
+  margin: 40px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .invitation-card {
+    padding: 40px 20px;
+  }
+
+  .couple-names {
+    font-size: 36px;
+  }
+
+  .together-text,
+  .date-text,
+  .reception-text {
+    font-size: 24px;
+  }
+
+  .feather-top,
+  .feather-bottom {
+    width: 200px;
+    height: 80px;
+  }
+
+  .invitation-message {
+    font-size: 22px;
+    margin: 30px 0;
+  }
+}
+
+/* Suggestions list styling */
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 30;
+}
+
+.suggestion-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--soft-white);
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.message-display {
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.message-content {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--soft-white);
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Rest of your existing styles */
+.card {
+  position: relative;
+  z-index: 20;
+  width: 90%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 24px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.132),
+    rgba(245, 230, 211, 0.08)
+  );
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-image: url("");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.card::before {
+  top: -40px;
+  left: -60px;
+  transform: rotate(-45deg);
+}
+
+.card::after {
+  bottom: -40px;
+  right: -60px;
+  transform: rotate(135deg);
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: var(--gold);
+  margin: 15px auto;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+.subtitle {
+  text-align: center;
+  opacity: 0.9;
+  margin: 20px 0 40px;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.form-row {
+  margin-top: 18px;
+  position: relative;
+}
+
+.form-row label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* IMPORTANT: drives the base rendering of form controls on iOS */
+  color-scheme: dark;
+
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+
+  /* Paint your background explicitly; use !important to beat UA rules */
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(245, 230, 211, 0.1)
+  );
+  background-clip: padding-box; /* avoid weird bleed */
+  color: var(--soft-white);
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+
+  /* 2) Move blur OFF the input (see wrapper rule below) */
+  backdrop-filter: none !important;
+  /* -webkit-backdrop-filter: none !important; */
+  /* Optional niceties */
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: none;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+  border-color: rgba(212, 175, 55, 0.8);
+  transform: translateY(-3px);
+  background: rgba(49, 49, 49, 0);
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  transform: translateY(-3px);
+}
+
+.actions {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.gold-btn {
+  margin-top: 30px;
+  padding: 16px 40px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d4af37, #ffd966);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.gold-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+}
+
+.gold-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+}
+
+.gold-btn:hover::before {
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Invitation — luxurious Romanian styling */
+.invitation-full {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 36px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 249, 240, 0.06),
+    rgba(245, 235, 220, 0.03)
+  );
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  backdrop-filter: blur(10px) saturate(1.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  color: #fff9f0;
+  position: relative;
+  overflow: visible;
+}
+
+/* Feather decorations (place feather-gold.png in /public/assets/) */
+.feather-top,
+.feather-bottom {
+  width: 220px;
+  height: 70px;
+  background-image: url("/assets/feather-new.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* positioned absolutely in the invitation card; no auto-centering */
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+  z-index: 100; /* ensure visible above background */
+}
+.feather-top {
+  transform: translateY(20px);
+}
+.feather-bottom {
+  transform: rotate(280deg);
+}
+/* @media screen and (max-width: 600px) {
+  .feather-top {
+    transform: translateY(50px);
+  }
+  .feather-bottom {
+    transform: rotate(180deg);
+  }
+} */
+
+/* Content typography */
+.invitation-content {
+  text-align: center;
+  padding: 8px 20px;
+}
+.together-text {
+  font-family: "Great Vibes", serif;
+  font-size: 28px;
+  color: #f7ead9;
+  margin-bottom: 8px;
+  letter-spacing: 0.6px;
+}
+.honor-text,
+.presence-text {
+  font-family: "Playfair Display", serif;
+  font-size: 12px;
+  color: rgba(255, 245, 235, 0.9);
+  letter-spacing: 6px;
+  margin: 8px 0;
+}
+.couple-names {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  margin: 12px 0 6px;
+  letter-spacing: 6px;
+  color: #fff9f0;
+}
+.couple-names .and {
+  display: block;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin: 6px 0;
+  color: rgba(255, 245, 235, 0.85);
+}
+.date-text {
+  font-family: "Great Vibes", serif;
+  font-size: 22px;
+  color: #f3e2c8;
+  margin: 15px 0 12px;
+  letter-spacing: 1px;
+}
+
+/* Details */
+.details .time,
+.details .venue {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  color: rgba(255, 245, 235, 0.9);
+  margin: 2px 0;
+  letter-spacing: 2px;
+}
+
+/* Message (custom or default) */
+.invitation-message {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  color: #e9d8b7;
+  margin: 18px 0 10px;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Reception line */
+.reception-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 245, 235, 0.9);
+  margin-top: 2px;
+  letter-spacing: 1.5px;
+}
+
+/* RSVP area */
+.rsvp-section {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.guest-name {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: #fff9f0;
+  opacity: 0.95;
+}
+.confirm-btn {
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0.95),
+    rgba(255, 215, 120, 0.95)
+  );
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 28px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.confirm-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(212, 175, 55, 0.22);
+}
+
+/* RSVP Form and Menu Styles */
+.rsvp-form-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.rsvp-form {
+  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(245, 230, 211, 0.08)
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Menu Options Styles */
+.menu-options {
+  margin-top: 40px;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px; */
+  width: 100%;
+}
+
+.menu-option {
+  margin: 15px 0 !important;
+  backdrop-filter: none !important;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(245, 230, 211, 0.08)
+  );
+
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 24px;
+  padding: 30px 20px;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--feather-gold);
+}
+
+.menu-option-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 32px;
+  color: var(--feather-gold);
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu-option-description {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: var(--soft-white);
+  line-height: 1.6;
+}
+
+.menu-not-ready {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  color: var(--soft-white);
+  text-align: center;
+  margin: 40px 0;
+  font-style: italic;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rsvp-form-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 42px;
+  color: var(--feather-gold);
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rsvp-form-group {
+  margin-bottom: 30px;
+}
+
+.rsvp-form-label {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--soft-white);
+  margin-bottom: 12px;
+  display: block;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.rsvp-form-select {
+  appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none;
+  color-scheme: dark;
+  backdrop-filter: none !important;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(245, 230, 211, 0.1)
+  );
+  width: 100%;
+  padding: 16px 20px;
+
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  color: var(--soft-white);
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23D4AF37%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px top 50%;
+  background-size: 12px auto;
+}
+
+.rsvp-form-select option {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: none !important;
+  color: var(--soft-white);
+  padding: 16px;
+  font-size: 16px;
+}
+
+.rsvp-form-select:focus,
+.rsvp-form-input:focus {
+  appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none;
+  backdrop-filter: none !important;
+  color-scheme: dark;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(245, 230, 211, 0.1)
+  );
+  outline: none;
+  border-color: var(--feather-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.rsvp-form-input {
+  width: 100%;
+  backdrop-filter: none !important;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  color: var(--soft-white);
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.rsvp-form-input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--feather-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  outline: none;
+}
+
+.rsvp-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.rsvp-form-select,
+.rsvp-form-input {
+  backdrop-filter: blur(5px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-form-select:hover,
+.rsvp-form-input:hover {
+  appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none;
+  color-scheme: dark;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(245, 230, 211, 0.1)
+  );
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.guests-input-container {
+  margin-top: 15px;
+  opacity: 0;
+  height: 0;
+  transition: all 0.3s ease;
+}
+
+/* Style for the dropdown arrow */
+.rsvp-form-select {
+  background-size: 14px auto !important;
+  padding-right: 40px !important;
+}
+
+/* Enhanced visibility for dropdown options */
+.rsvp-form-select option {
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 12px;
+  font-size: 16px;
+  text-shadow: none;
+}
+
+/* Animation for form groups */
+.rsvp-form-group {
+  transition: all 0.3s ease;
+  transform-origin: top;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.guests-input-container.visible {
+  opacity: 1;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.rsvp-submit-btn {
+  background: linear-gradient(90deg, var(--feather-gold), #ffd966);
+  color: #000;
+  border: none;
+  padding: 16px 40px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  display: block;
+  margin: 40px auto 0;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+}
+
+.rsvp-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+}
+
+/* Make invitation scrollable on small screens */
+.invite-root .invitation-card.invitation-full {
+  -webkit-backdrop-filter: blur(10px);
+  max-height: calc(100vh - 80px);
+  overflow: auto;
+  padding-bottom: 36px;
+}
+
+/* Ensure text remains readable over video */
+.invitation-card * {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .couple-names {
+    font-size: 36px;
+  }
+  .invitation-message {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+  .feather-top,
+  .feather-bottom {
+    width: 200px;
+    height: 200px;
+    opacity: 0.4;
+    z-index: 100; /* keep above background but below modal content if needed */
+  }
+}
+
+/* Envelope opening animation */
+.envelope-overlay {
+  position: fixed; /* ensure it covers the viewport and sits above all content */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* no dimming background */
+  z-index: 9999; /* very high to avoid being covered */
+  cursor: pointer;
+}
+.envelope {
+  width: 100%;
+
+  height: auto;
+  position: relative;
+  perspective: 1200px;
+}
+.envelope-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 600px) {
+  .envelope-gif {
+    min-width: 100%;
+    width: auto;
+    height: 100%;
+  }
+}
+
+/* fade overlay out */
+.envelope-overlay.fade-out {
+  animation: overlay-fade 0.5s ease forwards;
+}
+@keyframes overlay-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* reveal page content with scale/fade */
+.invite-root {
+  opacity: 0.5;
+  transform: scale(0.4);
+  transition: opacity 5s ease, transform 5s ease;
+}
+.invite-root.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+body {
+  background-color: #363333;
+}
+
+.email-contact {
+  color: white;
+  text-decoration: none;
+}

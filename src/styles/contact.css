@@ -1,0 +1,32 @@
+.contact-info {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 1.25rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+.contact-item span {
+  opacity: 0.9;
+}

@@ -1,0 +1,1 @@
+Place a high-quality looping video named 'feathers.mp4' in this folder. The frontend references '/assets/feathers.mp4' as the background video source. Use a short, loop-friendly clip (10-30s) showing elegant feathers, shimmering lights, or sparkles. Keep file size reasonable for web use (ideally under 10-20MB optimized).
