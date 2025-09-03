@@ -6,17 +6,30 @@ const LanguageContext = createContext();
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState("ro");
 
+  const t = (key) => {
+    if (!key) return "";
+
+    // Handle nested keys (e.g., "invitation.date")
+    if (key.includes(".")) {
+      const keys = key.split(".");
+      let value = translations[language];
+
+      for (const nestedKey of keys) {
+        value = value?.[nestedKey];
+        if (value === undefined) break;
+      }
+
+      return value || key;
+    }
+
+    // Handle simple keys
+    return translations[language]?.[key] || key;
+  };
+
   const value = {
     language,
     setLanguage,
-    t: (key) => {
-      const translation = translations[language]?.[key];
-      if (typeof key === "string" && key.includes(".")) {
-        const [section, subKey] = key.split(".");
-        return translations[language]?.[section]?.[subKey];
-      }
-      return translation;
-    },
+    t,
   };
 
   return (

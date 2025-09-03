@@ -35,7 +35,7 @@ export default function InvitationFlow({
           exit={{ opacity: 0, y: -20 }}
         >
           <div className="rsvp-form">
-            <h2 className="rsvp-form-title">With Pleasure...</h2>
+            <h2 className="rsvp-form-title">{t("withPleasure")}</h2>
             <form onSubmit={submitRsvpForm}>
               {/* Will You Join */}
               <div className="rsvp-form-group">
@@ -48,13 +48,13 @@ export default function InvitationFlow({
                   required
                 >
                   <option value="">{t("pleaseChoose")}</option>
-                  <option value="Yes, I can't wait">{t("yesAnswer")}</option>
-                  <option value="No">{t("noAnswer")}</option>
+                  <option value="yes">{t("yesAnswer")}</option>
+                  <option value="no">{t("noAnswer")}</option>
                 </select>
               </div>
 
               {/* Bringing Guests */}
-              {rsvpData.attending === "Yes, I can't wait" && (
+              {rsvpData.attending === "yes" && (
                 <div className="rsvp-form-group">
                   <label className="rsvp-form-label">
                     {t("bringingGuests")}
@@ -67,15 +67,12 @@ export default function InvitationFlow({
                     required
                   >
                     <option value="">{t("pleaseChoose")}</option>
-                    <option value="Yes, the more the merrier!">
-                      {t("yesBringGuests")}
-                    </option>
-                    <option value="No">{t("noBringGuests")}</option>
+                    <option value="yes">{t("yesBringGuests")}</option>
+                    <option value="no">{t("noBringGuests")}</option>
                   </select>
 
                   {/* Guest names input */}
-                  {rsvpData.bringing_guests ===
-                    "Yes, the more the merrier!" && (
+                  {rsvpData.bringing_guests === "yes" && (
                     <div className="guests-input-container visible">
                       <label className="rsvp-form-label">
                         {t("guestNames")}
@@ -95,7 +92,7 @@ export default function InvitationFlow({
               )}
 
               {/* Song request */}
-              {rsvpData.attending === "Yes, I can't wait" && (
+              {rsvpData.attending === "yes" && (
                 <div className="rsvp-form-group">
                   <label className="rsvp-form-label">{t("songRequest")}</label>
                   <input

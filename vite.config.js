@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    base: mode === 'production' ? '/feather-carnival-invite-frontend/' : '/',
     server: {
       host: true, // listen on all addresses, required for LAN access
       port: 5173,

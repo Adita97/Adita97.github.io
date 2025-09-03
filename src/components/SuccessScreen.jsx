@@ -1,8 +1,10 @@
 // src/components/SuccessScreen.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function SuccessScreen({ t, rsvpData }) {
+  const notify = () => toast("Here is your toast.");
   return (
     <motion.div
       className="rsvp-form-container"
@@ -10,6 +12,55 @@ export default function SuccessScreen({ t, rsvpData }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0 }}
     >
+      {/* ✅ Toast container inside this component */}
+      <Toaster
+        position="bottom-center"
+        toastOptions={{
+          duration: 5000, // how long it shows
+          style: {
+            position: "sticky",
+            top: 0,
+            maxWidth: "90vw", // fit nicely on small screens
+            width: "auto",
+            minWidth: "300px", // not too tiny
+            margin: "0 auto 20px", // 20px from bottom
+            padding: "16px 24px",
+            background: "linear-gradient(135deg, #fffaf0, #fff5f8)", // soft wedding colors
+            color: "#5a3e36",
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "16px",
+            fontWeight: 500,
+            letterSpacing: "0.5px",
+            borderRadius: "20px",
+            border: "2px solid rgba(218, 165, 32, 0.3)", // subtle gold border
+            boxShadow: "0 8px 20px rgba(218, 165, 32, 0.15)",
+            textAlign: "center",
+            backdropFilter: "blur(4px)",
+          },
+          success: {
+            style: {
+              background: "linear-gradient(135deg, #fff1e6, #ffe6f0)",
+              color: "#a76f46",
+              border: "2px solid rgba(255, 215, 0, 0.3)",
+            },
+            iconTheme: {
+              primary: "#f7c948",
+              secondary: "#fffaf0",
+            },
+          },
+          error: {
+            style: {
+              background: "linear-gradient(135deg, #fff0f0, #ffe6eb)",
+              color: "#d85c5c",
+              border: "2px solid rgba(255, 99, 71, 0.3)",
+            },
+            iconTheme: {
+              primary: "#e74c3c",
+              secondary: "#fff0f0",
+            },
+          },
+        }}
+      />
       <div className="rsvp-form">
         {rsvpData.confirmed === true ? (
           <>
@@ -36,7 +87,7 @@ export default function SuccessScreen({ t, rsvpData }) {
                     className="menu-option"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => alert(t("menuNotReady"))}
+                    onClick={() => toast(t("menuNotReady"))}
                   >
                     <h3 className="menu-option-title">{t("restaurantMenu")}</h3>
                     <p className="menu-option-description">{t("viewMenu")}</p>
@@ -68,7 +119,7 @@ export default function SuccessScreen({ t, rsvpData }) {
                     className="menu-option"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => alert(t("menuNotReady"))}
+                    onClick={() => toast(t("menuNotReady"))}
                   >
                     <h3 className="menu-option-title">{t("restaurantMenu")}</h3>
                     <p className="menu-option-description">{t("viewMenu")}</p>
@@ -96,7 +147,7 @@ export default function SuccessScreen({ t, rsvpData }) {
           </>
         ) : (
           <>
-            <h2 className="rsvp-form-title">Thank You for Your Response</h2>
+            <h2 className="rsvp-form-title">{t("thankYou")}</h2>
             <p className="invitation-message">{t("thankYouDecline")}</p>
             <p>{t("contactChanges")}</p>
             <div className="contact-details">

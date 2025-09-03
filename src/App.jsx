@@ -8,8 +8,10 @@ import "./styles/admin.css";
 import "./styles/select.css";
 
 export default function App() {
+  const basename = import.meta.env.PROD ? '/feather-carnival-invite-frontend' : '';
+  
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<RSVP />} />
         <Route path="/admin/login" element={<AdminLogin />} />

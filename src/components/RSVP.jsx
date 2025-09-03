@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "../lib/supabase";
+import { useLanguage } from "../context/LanguageContext";
 
+// Components
 import Invitation from "./Invitation";
 import LanguageSelector from "./LanguageSelector";
-import { useLanguage } from "../context/LanguageContext";
 import GuestSearch from "./GuestSearch";
 import SuccessScreen from "./SuccessScreen";
 import InvitationFlow from "./InvitationFlow";
 
+// Styles
 import "../styles/dropdown.css";
 import "../styles/contact.css";
 import "../styles/language-selector.css";
@@ -208,14 +210,13 @@ export default function RSVP() {
     const guest = firstOptions.find((g) => g.id === selectedFirst);
     if (!guest) return;
 
-    const isAttending = rsvpData.attending === "Yes, I can't wait";
+    const isAttending = rsvpData.attending === "yes";
 
     const { error } = await supabase
       .from("guests")
       .update({
         confirmed: isAttending,
-        bringing_guests:
-          rsvpData.bringing_guests === "Yes, the more the merrier!",
+        bringing_guests: rsvpData.bringing_guests === "yes",
         guest_names: rsvpData.guest_names,
         song_request: rsvpData.song_request,
       })
