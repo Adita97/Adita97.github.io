@@ -1,0 +1,42 @@
+name: Send Telegram RSVP Notifications
+
+on:
+  schedule:
+    # Run every 5 minutes
+    - cron: '0 * * * *'
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  send-notifications:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install axios @supabase/supabase-js
+
+      - name: Send Telegram notifications
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
+        run: node .github/scripts/notify-telegram.js
+
+      - name: Log result
+        if: always()
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "✅ Telegram notifications sent successfully"
+          else
+            echo "❌ Failed to send Telegram notifications"
+          fi
